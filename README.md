@@ -10,10 +10,10 @@ My aim with coding this is to use as little code as possible that I don't unders
 
 The app also has no backend; state is stored only locally, using the HTML5 localStorage object. The benefits of this are speed, maintainability, reliability, and not having to worry about data protection. The downside is being unable to sync progress.
 
-## Prototype
+**Prototype**
 
 [You can see the prototype for this app here](https://www.figma.com/proto/TuVKy9iDfOQgIye5cAKnHI/Stack-trainer?node-id=0%3A1&viewport=227%2C-243%2C0.42452383041381836&scaling=scale-down).
 
-## Learning Algorithm
+**Learning Algorithm**
 
 More info about the algorithm soon!
