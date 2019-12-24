@@ -1,0 +1,7 @@
+vanilla js and css
+
+hammertime for swipe gestures https://codepen.io/jtangelder/pen/lgELw
+
+localstorage object for saving progress, as opposed to a backend
+
+es6 modules?

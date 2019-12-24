@@ -1,0 +1,84 @@
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+	<link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="mt-80" id="setup-1">
+			<h1 class="center">Hey there!</h1>
+			<form method="post" onsubmit="fab1()">
+				<p class="center" for="name">What's your name?</p>
+				<input required id="name-input" class="center" minlength="1" type="text" title="Please enter your name" placeholder="Juan" />
+				<p class="center">Choose your stack</p>
+				<select required id="stack-input">
+					<option disabled selected value="">Choose an option</option>
+					<option value="Mnemonica">Mnemonica</option>
+					<option value="Aronson">Aronson</option>
+					<option value="Redford">Redford</option>
+					<option value="Memorandum">Memorandum</option>
+					<option disabled>Custom (coming soon)</option>
+				</select>
+				<input type="submit" value="" class="fab button" />
+			</form>
+		</div>
+		<div class="mt-80 hidden" id="setup-2">
+			<h1 class="center">Almost there...</h1>
+						<form method="post" onsubmit="fab2()">
+
+			<p class="center"><strike>Would you like a daily reminder to practice?</strike></p>
+			<p class="center"><em>Coming soon!</em></p>
+				<input type="submit" value="" class="fab button" />
+			</form>
+		</div>
+		
+		<div class="mt-80 hidden" id="setup-3">
+			<h1 class="center">Sweet!</h1>
+			
+			<p class="center">We’re ready to begin!</p>
+			<p class="center">All your progress is stored locally — we don’t send any information to any servers - so just come back to this website on the same device you’re on now whenever you want to continue.</p>
+			<p class="center">Bookmark this page or save it to your homescreen so you can easily come back to it.</p>
+		</div>
+		<div style="margin: 0 auto;" class="hidden" id="setup-4">
+			<a class="button" href="./main.html">Begin</a>
+		</div>
+	</div>
+	<script>
+		// Load correct page
+		if (localStorage.getItem('setup-phase') == null) {
+			document.getElementById('setup-1').classList.remove('hidden');
+			document.getElementById('setup-2').classList.add('hidden');
+			document.getElementById('setup-3').classList.add('hidden');
+			document.getElementById('setup-4').classList.add('hidden');
+		} else if  (localStorage.getItem('setup-phase') == 2) {
+			document.getElementById('setup-1').classList.add('hidden');
+			document.getElementById('setup-2').classList.remove('hidden');
+			document.getElementById('setup-3').classList.add('hidden');
+			document.getElementById('setup-4').classList.add('hidden');
+		} else if (localStorage.getItem('setup-phase') == 3) { 
+			document.getElementById('setup-1').classList.add('hidden');
+			document.getElementById('setup-2').classList.add('hidden');
+			document.getElementById('setup-3').classList.remove('hidden');
+			document.getElementById('setup-4').classList.remove('hidden');
+		}
+		
+		// first fab
+		// stores name and stack to local storage	
+		// then laods of page two
+		function fab1() {
+			let name = document.getElementById("name-input").value;
+			let stack = document.getElementById("stack-input").value;
+			localStorage.setItem('name', name);
+			localStorage.setItem('stack', stack);
+			localStorage.setItem('setup-phase', '2');
+		}
+
+		// second fab
+		// notification toggle — coming soon
+		function fab2() {
+			localStorage.setItem('setup-phase', 3);	
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Stack Trainer",
+  "short_name": "Stack Trainer",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#003A51",
+  "theme_color": "#FF7560"
+}

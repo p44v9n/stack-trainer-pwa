@@ -1,0 +1,139 @@
+/* Variables and colors */
+/*
+midnight-blue
+coral
+coral-dark
+dark-grey
+*/
+/* Typography */
+
+* {
+	cursor: crosshair;
+}
+
+.hidden {
+	display:none;
+}
+
+h1 {
+	font-family: 'Noe Display', serif;
+	font-weight: 600;
+	font-size: 2.5rem;
+}
+p {
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 1.1rem;
+}
+.center {
+	text-align: center;
+}
+.lead {
+	font-size: 1.6rem;
+}
+
+/* Grid */
+
+.container {
+	max-width: 375px;
+	height: 667px; 
+	margin: 50px auto;
+	background-image: url("./img/bg-pattern.png");
+	background-position: bottom;
+	background-blend-mode: multiply;
+	display: grid;
+	position: relative;
+}
+.con-4-5-1 {
+	grid-template-rows: 40% 50% 10%;
+}
+.container div {
+	margin: 0 20px;
+}
+body {
+	background-color: #111315;
+}
+div.mt-80 {
+	margin-top: 4rem;
+}
+
+.col-0 { background-color: #F2ECF6; }
+.col-1 { background-color: #E7F7EA; }
+.col-2 { background-color: #D8E8ED; }
+
+
+/* Forms / inputs / etc*/
+
+input { 
+	font-size: 1.1rem;
+	font-family: 'IBM Plex Mono';
+	border: 2px solid #003A51;
+	border-radius: 8px;
+	padding:0.5rem 0;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
+select  {
+	font-size: 1.1rem;
+	font-family: 'IBM Plex Mono';
+	border: 2px solid #003A51;
+	border-radius: 8px;
+	padding:0.5rem 2rem 0.5rem 1rem;
+	display: block;
+	margin: 0 auto;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url(img/down-arrow.svg) no-repeat right;
+}
+
+select:invalid, select[disabled] {
+	color:#999;
+}
+
+.button { 
+	text-decoration: none;
+	background-color: #FF7560;
+	padding: .5rem 1rem;
+	border-radius: 8px;
+	color: #ffffff;
+	font-size: 1.1rem;
+	font-family: 'IBM Plex Mono';
+	border: none;
+}
+.button:hover, .button:focus, .button:active {
+	background-color: #BC412E;
+}
+.button:hover, .button:focus, .button:active, select:hover, select:focus, select:active, input:focus, input:hover {
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.fab {
+	border-radius: 50%;
+	width: 60px; height: 60px;
+	padding: 0;
+	position: absolute;
+	bottom: 5%; right: 10%;
+	background: url(img/right-arrow.svg) no-repeat left #FF7560;
+}
+
+/* proposition-specific */
+
+#prop-img {
+	width: 100%;
+	height:100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+	background-position: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.prop-img-0 {
+	background-image: url(./img/prop1.png);
+}
+.prop-img-1 {
+	background-image: url(./img/prop2.png);
+}
+.prop-img-2 {
+	background-image: url(./img/prop3.png);
+}

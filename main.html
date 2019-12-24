@@ -1,0 +1,40 @@
+<html>
+
+<head>
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+      <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+      <div class="container">
+            <div>
+                  <h1 class="center">Stack Trainer</h1>
+                  
+            </div>
+      </div>
+      <div id="bottom-nav">
+            <div class="tab">
+                  <div class="icon icon1"></div>
+                  Practice
+            </div>
+      </div>
+</body>
+
+<script>
+      // install prompt
+      var installPromptEvent;
+      window.addEventListener('beforeinstallprompt', function(event) {
+            event.preventDefault();
+            installPromptEvent = event;
+      });
+      function callInstallPrompt() {
+            if (installPromptEvent !== undefined) {
+                  installPromptEvent.prompt();
+            }
+      }
+</script>
+
+
+</body>
+
+</html>

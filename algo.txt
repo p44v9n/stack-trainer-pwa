@@ -1,0 +1,39 @@
+- Global variables
+Set-up complete?
+Tutorial complete?
+Name
+Stack
+Reminders
+
+
+- Stacks
+Unseen
+Queue
+Mastered
+
+- Items
+106 items
+Each item has the properties:
+card, position, which-being-asked, correct-ans-needed, times-seen, times-ans-correctly
+Card is made up of suit and value
+
+- Algo
+Every item has correct-ans-needed = 3 at start
+Unseen is in stack order i.e. pos1, pos2, pos3, 4c, 2h, 7d, pos4, pos5, pos6, 3c, 5h, etc.
+If queue is < 7, add from top of unseen to make it 7
+If queue is empty & unseen is empty, move mastered into unseen
+When item answered correctly, decrement correct-ans-needed by 1
+If correct-ans-needed becomes 0, move to mastered bucket
+When item answered incorrectly, increment correct-ans-needed by 3 and put at back of queue
+
+
+- Additions
+Mental maths of subtracting 52 from numbers
+Neighbouring cards
+
+
+- Stats
+Worst card (return card of item that has lowest of times-seen - times-ans-correctly)
+Best card (return card of item that has highest of times-ans-correctly)
+visual representation of deck of cards with lines in gradient from green to red
+Total number answered on app (sum of times-seen variables)

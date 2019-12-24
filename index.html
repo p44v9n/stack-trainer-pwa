@@ -1,0 +1,63 @@
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+	<link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container con-4-5-1 col-0" id="proposition">
+		<div class="mt-80">
+			<h1 class="center">Stack Trainer</h1>
+			<p class="center" id="prop-text">Become a mem-deck master with our science-based approach to memorization</p>
+		</div>
+		<div id="swipe">
+			<img id="prop-img" class="prop-img-0" />
+			<!-- <img src="./img/prop2.png" class="prop-img" /> -->
+			<!-- <img src="./img/prop3.png" class="prop-img" /> -->
+		</div>
+		<div style="margin: 0 auto;">
+			<a class="button" href="./setup.html">
+				Let's Go ->
+			</a>
+		</div>
+	</div>
+	<!-- HammerJS handles touch events -->
+	<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+	<script>
+		// check if visited; if so jump to the quiz screen
+		// I think this will work when not running it locally
+		// if (localStorage.key('set-up-complete')) window.history.pushState("", "Main", "/main.html");
+
+		let textArray = ["Become a mem-deck master with our science-based approach to memorization", "Choose from every popular stack, or enter in your own custom order", "Check our curated list of the best mem-deck magic tricks around"];
+
+		function mod(n, m) {
+			return ((n % m) + m) % m;
+		}
+
+		var currentScreen = 0;
+		var swipeArea = document.getElementById('swipe');
+		var propImg = document.getElementById('prop-img');
+		var propText = document.getElementById('prop-text');
+		var container = document.getElementById('proposition');
+		var mc = new Hammer(swipe);
+		mc.on("swipeleft", function (ev) {
+			propImg.classList.remove("prop-img-"+currentScreen);
+			proposition.classList.remove("col-"+currentScreen);
+			currentScreen = mod((currentScreen - 1),3);
+			propText.innerText = textArray[currentScreen];
+			propImg.classList.add("prop-img-"+currentScreen);
+			proposition.classList.add("col-"+currentScreen);
+			console.log('currentScreen: '+currentScreen);
+		});
+		mc.on("swiperight", function (ev) {
+			propImg.classList.remove("prop-img-" + currentScreen);
+			proposition.classList.remove("col-" + currentScreen);
+			currentScreen = mod((currentScreen + 1), 3);
+			propText.innerText = textArray[currentScreen];
+			propImg.classList.add("prop-img-" + currentScreen);
+			proposition.classList.add("col-" + currentScreen);
+			console.log('currentScreen: ' + currentScreen);
+		});
+		
+	</script>
+</body>
+</html>
